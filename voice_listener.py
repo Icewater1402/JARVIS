@@ -15,7 +15,7 @@ class VoiceListener:
             self.recognizer.adjust_for_ambient_noise(source, duration=1)  # Calibrate ambient noise
             print("Listening for command...")
             try:
-                audio = self.recognizer.listen(source, timeout=5, phrase_time_limit=10)
+                audio = self.recognizer.listen(source, timeout=20, phrase_time_limit=10)
                 command = self.recognizer.recognize_google(audio)
                 return command  # Return the recognized command
             except sr.WaitTimeoutError:
